@@ -1,0 +1,42 @@
+/* src/components/Hero.module.css */
+.hero {
+  height: 95vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.imageContainer {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(45, 45, 45, 0.7) 10%, transparent 50%);
+}
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+}
+.content h1 {
+  font-family: var(--font-rozha);
+  font-size: 5rem;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+.content p {
+  font-family: var(--font-poppins);
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .content h1 { font-size: 3rem; }
+}

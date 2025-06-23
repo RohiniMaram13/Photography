@@ -1,95 +1,47 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+// src/app/page.tsx
+import Hero from '@/components/Hero';
+import FeaturedWork from '@/components/FeaturedWork';
+import Bio from '@/components/Bio';
+import styles from './page.module.css';
 
-export default function Home() {
+// A new simple CTA Component for this page
+const CtaSection = () => {
+    return (
+        // We will add an ID here for the button to scroll to
+        <section id="contact" className={`${styles.cta} pattern-bg`}>
+            <div className={styles.ctaContent}>
+                <span>Your Story Awaits</span>
+                <h2>Lets Preserve Your Legacy</h2>
+                <p>I am passionate about capturing the vibrancy and emotion of moments. If you connect with my work, I would be honoured to hear from you.</p>
+                <button className={styles.button}>Inquire Now</button>
+            </div>
+        </section>
+    )
+}
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
+    <main>
+      <Hero />
+      <FeaturedWork />
+      <Bio />
+      <CtaSection />
+      {/* START: Updated Footer Section */}
       <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <div className={styles.footerContent}>
+          <p>© {new Date().getFullYear()} Deep Depicts Photography</p>
+          <div className={styles.footerLinks}>
+            <a href="https://instagram.com/your_username" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              {/* This is an SVG icon for Instagram */}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="mailto:your.email@example.com">
+              your.email@example.com
+            </a>
+          </div>
+        </div>
       </footer>
-    </div>
+      {/* END: Updated Footer Section */}
+    </main>
   );
 }

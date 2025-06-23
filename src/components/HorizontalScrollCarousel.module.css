@@ -1,0 +1,69 @@
+/* src/components/HorizontalScrollCarousel.module.css */
+.container {
+  /* The height determines how long you scroll for */
+  height: 300vh; 
+  position: relative;
+}
+
+.stickyWrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+}
+
+.heading h2 {
+  font-size: 3.5rem;
+}
+
+.heading p {
+  max-width: 450px;
+  margin: 1rem auto 0 auto;
+  color: #666;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 5vw; /* Start with some padding */
+  height: 70%;
+}
+
+.card {
+  position: relative;
+  flex-shrink: 0;
+  width: 400px;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    font-family: var(--font-playfair);
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    margin: 0;
+}

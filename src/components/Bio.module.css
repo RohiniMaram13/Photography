@@ -1,0 +1,77 @@
+/* src/components/Bio.module.css */
+.bio {
+  padding: 8rem 2rem;
+  overflow: hidden; /* For animations */
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  position: relative;
+  /* This is key for the overlap effect */
+  transform: translateX(-20%);
+}
+
+.textWrapper {
+  padding: 2rem;
+  position: relative;
+}
+
+.textWrapper span {
+  font-family: var(--font-jakarta);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
+
+.textWrapper h2 {
+  font-size: 3rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.textWrapper p {
+  line-height: 1.9;
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+.button {
+  font-family: var(--font-jakarta);
+  background-color: transparent;
+  color: var(--color-heading);
+  border: 1px solid var(--color-heading);
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-heading);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .imageWrapper {
+    transform: translateX(0);
+    margin-bottom: 2rem;
+  }
+  .textWrapper {
+    text-align: center;
+  }
+}

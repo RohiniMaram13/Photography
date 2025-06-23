@@ -1,0 +1,51 @@
+/* src/components/FeaturedWork.module.css */
+.featuredWork {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg);
+}
+.heading {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+}
+.heading h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.heading p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  text-align: center;
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 125%; /* Aspect ratio for the image */
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  /* THE ARCH SHAPE */
+  border-radius: 180px 180px 0 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease;
+}
+.card:hover .imageWrapper {
+    transform: scale(1.03);
+}
+.cardContent h3 {
+  font-size: 2rem;
+  margin: 0 0 0.25rem 0;
+}
+.cardContent span {
+  font-family: var(--font-poppins);
+  color: var(--color-accent);
+  font-weight: 500;
+}
