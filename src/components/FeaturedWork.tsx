@@ -30,6 +30,8 @@ const galleries = [
 
 const FeaturedWork = () => {
   return (
+  <section id="work" className={styles.featuredWorkSection}>
+    {/* NEW: Updated section ID for smooth scrolling */}
     <section className={styles.featuredWork}>
       <div className={styles.heading}>
         {/* NEW: Updated heading text */}
@@ -63,6 +65,7 @@ const FeaturedWork = () => {
         ))}
       </div>
     </section>
+  </section>
   );
 };
 

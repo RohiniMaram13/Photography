@@ -29,11 +29,10 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 125%; /* Aspect ratio for the image */
+  padding-bottom: 125%;
   overflow: hidden;
   margin-bottom: 1.5rem;
-  /* THE ARCH SHAPE */
-  border-radius: 180px 180px 0 0;
+  border-radius: 8px; /* Box shape */
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: transform 0.4s ease;
 }
@@ -48,4 +47,17 @@
   font-family: var(--font-poppins);
   color: var(--color-accent);
   font-weight: 500;
+}
+
+/* --- MOBILE FIX ADDED BELOW --- */
+@media (max-width: 768px) {
+    .featuredWork {
+        padding: 4rem 1rem; /* Less vertical padding on mobile */
+    }
+    .heading h2 {
+        font-size: 2.2rem; /* Reduce heading size */
+    }
+    .grid {
+        gap: 2rem; /* Less space between photos */
+    }
 }

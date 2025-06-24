@@ -1,10 +1,10 @@
 /* src/app/globals.css */
 :root {
   /* Color Palette */
-  --color-bg: #FFFBF5; /* A warm, creamy off-white */
-  --color-text: #4A4A4A; /* Softer than black */
+  --color-bg: #FFFBF5;
+  --color-text: #4A4A4A;
   --color-heading: #2D2D2D;
-  --color-accent: #E58B6F; /* A rich, warm terracotta/marigold */
+  --color-accent: #E58B6F;
   --color-accent-dark: #B5654C;
 
   /* Font Variables */
@@ -22,7 +22,6 @@
     background-repeat: repeat;
 }
 
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -39,4 +38,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-heading);
   font-weight: 400;
   line-height: 1.2;
+}
+
+#contact {
+    scroll-margin-top: 96px; /* Change to your header's height if needed */
+}
+
+main {
+  padding-top: 96px; /* Change to your header's height if needed */
 }

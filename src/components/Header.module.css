@@ -1,0 +1,236 @@
+/* src/components/Header.module.css */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    z-index: 1000;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, padding 0.4s ease;
+    color: var(--color-heading); 
+    background-color: #FFFBF5; /* Always solid for readability */
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+    
+}
+
+.header.scrolled {
+    background-color: rgba(248, 245, 242, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    color: var(--color-heading);
+}
+.logo {
+    flex: 0 0 auto; /* Prevent logo from shrinking */
+    min-width: 0;
+}
+
+.logo a {
+    font-family: var(--font-rozha);
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
+    color: inherit;
+    transition: font-size 0.4s ease;
+    white-space: nowrap;
+}
+
+.header.scrolled .logo a {
+    text-shadow: none;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    flex:1 1 0%;    /* Allow nav to shrink */
+    justify-content: flex-end;
+    min-width: 0;      /* Prevent overflow */
+    
+    margin-left: auto; /* Push nav to the right */
+    transition: gap 0.4s ease;
+    overflow-x: auto;
+   
+}
+
+.nav a {
+    font-family: var(--font-poppins);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    color: inherit;
+    transition: font-size 0.4s ease;
+    white-space: nowrap; /* Prevents text from breaking onto a new line */
+    
+}
+
+.header.scrolled .nav a {
+    text-shadow: none;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menuButton {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburgerLine {
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+    background: currentColor;
+}
+
+.menuButton.open .hamburgerLine:first-child {
+    transform: rotate(45deg);
+}
+
+.menuButton.open .hamburgerLine:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.menuButton.open .hamburgerLine:last-child {
+    transform: rotate(-45deg);
+}
+.menuButton{
+    z-index: 2100;;
+}
+
+.mobileNavOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-bg, #FFFBF5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s, visibility 0.4s;
+    z-index: 2000;
+}
+.mobileNavOverlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobileNavLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.mobileNavLinks a {
+    font-family: var(--font-rozha);
+    font-size: 2.5rem;
+    color: var(--color-heading);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.mobileNavLinks a:hover {
+    color: var(--color-accent);
+}
+
+/* --- FINAL LAYERED RESPONSIVE FIX --- */
+
+/* For smaller laptops and large tablets */
+@media (max-width: 1200px) {
+    .header {
+        padding: 1rem 0.5rem;
+    }
+    .nav {
+        gap: 0.7rem; /* Reduce gap further for more space */
+    }
+}
+
+/* For standard tablets */
+@media (max-width: 992px) {
+    .logo a {
+        font-size: 1.1rem;
+    }
+    .nav a {
+        font-size: 0.85rem;
+    }
+}
+
+/* For phones and smaller tablets */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    .menuButton {
+        display: flex;
+    }
+}
+@media (max-width: 1400px) {
+    .nav {
+        gap: 0.5rem;
+    }
+    .nav a {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 0.75rem 0.5rem;
+    }
+    .logo a {
+        font-size: 1.1rem;
+    }
+    .nav {
+        display: none;
+    }
+    .menuButton {
+        display: flex;
+    }
+
+    .mobileNavLinks a {
+        font-size: 2rem;
+        padding: 1rem 0;
+        width: 100vw;
+        text-align: center;
+    }
+}

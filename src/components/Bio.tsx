@@ -14,6 +14,7 @@ const Bio = () => {
   };
 
   return (
+    <section id="about" className={styles.bio}>
     <section className={styles.bio}>
       <div className={styles.container}>
         <motion.div
@@ -53,6 +54,7 @@ const Bio = () => {
           </button>
         </motion.div>
       </div>
+    </section>
     </section>
   );
 };

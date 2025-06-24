@@ -37,6 +37,16 @@
   margin-top: 1rem;
 }
 
+/* --- MOBILE FIX ADDED BELOW --- */
 @media (max-width: 768px) {
-  .content h1 { font-size: 3rem; }
+  .hero {
+    height: 80vh; /* Make hero section a bit shorter on mobile */
+  }
+  .content h1 {
+    font-size: 3rem; /* Drastically reduce font size */
+  }
+  .content p {
+      font-size: 0.9rem; /* Slightly smaller subtitle */
+      padding: 0 1rem; /* Add padding to prevent text touching edges */
+  }
 }

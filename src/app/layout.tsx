@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 // Our new, curated font pairing
 import { Rozha_One, Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "../components/Header"; 
 
 const rozha = Rozha_One({
   subsets: ["latin"],
@@ -30,7 +31,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${rozha.variable} ${poppins.variable}`}>
+        <Header />
+        <main>
         {children}
+        </main>
       </body>
     </html>
   );

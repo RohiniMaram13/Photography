@@ -3,7 +3,6 @@
     padding: 6rem 2rem;
     position: relative;
 }
-/* The ::before pseudo-element creates the overlay so the text is readable */
 .cta::before {
     content: '';
     position: absolute;
@@ -38,6 +37,7 @@
     line-height: 1.8;
     margin-bottom: 2rem;
 }
+
 .button {
     font-family: var(--font-poppins);
     background-color: var(--color-accent);
@@ -61,39 +61,50 @@
     font-size: 0.9rem;
     color: #888;
 }
-/* ADD THESE NEW STYLES TO THE BOTTOM OF YOUR FILE */
-
 .footerContent {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allows it to stack on small screens */
+  flex-wrap: wrap;
   gap: 1rem;
 }
-
 .footerLinks {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
-
 .footerLinks a {
   color: var(--color-text);
   text-decoration: none;
   font-weight: 400;
   transition: color 0.3s ease;
+  /* NEW styles for icon alignment */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
 .footerLinks a:hover {
   color: var(--color-accent);
 }
-
 .footerLinks svg {
     transition: stroke 0.3s ease;
 }
-
 .footerLinks a:hover svg {
     stroke: var(--color-accent);
+}
+
+/* --- MOBILE FIX ADDED BELOW --- */
+@media (max-width: 768px) {
+    .cta {
+        padding: 4rem 1rem;
+    }
+    .ctaContent h2 {
+        font-size: 2.2rem; /* Reduce heading size */
+    }
+    .footerContent {
+        justify-content: center; /* Center footer content on mobile */
+        flex-direction: column-reverse; /* Stack email below copyright */
+    }
 }
