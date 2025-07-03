@@ -84,16 +84,19 @@
   .textWrapper {
     max-width: 100%;
     text-align: center;
-    padding: 0 0.5rem;
+    padding: 0 1rem; /* Increase side padding for better readability */
   }
   .textWrapper h2 {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
+    word-break: break-word;
   }
   .textWrapper p {
-    font-size: 1rem;
+    font-size: 0.97rem;
     line-height: 1.6;
     margin-bottom: 1.2rem;
+    word-break: break-word;
+    padding: 0 0.2rem;
   }
   .button {
     width: 100%;
