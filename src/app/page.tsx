@@ -4,6 +4,7 @@ import FeaturedWork from '@/components/FeaturedWork';
 import Bio from '@/components/Bio';
 import Header from '@/components/Header';
 import ContactForm from '@/components/ContactForm'; // <-- Import the new ContactForm
+import Chatbot from '@/components/Chatbot';
 import styles from './page.module.css';
 
 // The old CtaSection component is no longer needed.
@@ -16,6 +17,9 @@ export default function HomePage() {
       <FeaturedWork />
       <Bio />
       <ContactForm /> {/* <-- Use the new ContactForm component here */}
+      <Chatbot />
+      
+      {/* Footer Section */}
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <p>© {new Date().getFullYear()} Deep Depicts Photography</p>

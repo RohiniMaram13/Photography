@@ -15,7 +15,12 @@
     background-color: #FFFBF5; /* Always solid for readability */
     border-bottom: 1px solid #e0e0e0;
     overflow: hidden;
-    
+}
+
+/* Dark mode header background for contrast */
+[data-theme="dark"] .header {
+    background-color: #181818;
+    border-bottom: 1px solid #333;
 }
 
 .header.scrolled {
@@ -25,6 +30,7 @@
     border-bottom: 1px solid rgba(0,0,0,0.05);
     color: var(--color-heading);
 }
+
 .logo {
     flex: 0 0 auto; /* Prevent logo from shrinking */
     min-width: 0;
@@ -35,10 +41,13 @@
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: bold;
-    text-shadow: 0 1px 10px rgba(0,0,0,0.3);
-    color: inherit;
+    text-shadow: 0 1px 10px rgba(0,0,0,0.15), 0 0 2px #000;
+    color: #2D2D2D; /* dark for light mode */
     transition: font-size 0.4s ease;
     white-space: nowrap;
+}
+[data-theme="dark"] .logo a {
+    color: #fff;    /* white for dark mode */
 }
 
 .header.scrolled .logo a {
@@ -48,14 +57,12 @@
 .nav {
     display: flex;
     gap: 1rem;
-    flex:1 1 0%;    /* Allow nav to shrink */
+    flex: 1 1 0%;    /* Allow nav to shrink */
     justify-content: flex-end;
     min-width: 0;      /* Prevent overflow */
-    
     margin-left: auto; /* Push nav to the right */
     transition: gap 0.4s ease;
     overflow-x: auto;
-   
 }
 
 .nav a {
@@ -69,7 +76,6 @@
     color: inherit;
     transition: font-size 0.4s ease;
     white-space: nowrap; /* Prevents text from breaking onto a new line */
-    
 }
 
 .header.scrolled .nav a {
@@ -104,7 +110,7 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10;
+    z-index: 2100;
 }
 
 .hamburgerLine {
@@ -128,9 +134,6 @@
 
 .menuButton.open .hamburgerLine:last-child {
     transform: rotate(-45deg);
-}
-.menuButton{
-    z-index: 2100;;
 }
 
 .mobileNavOverlay {
@@ -205,6 +208,7 @@
         display: flex;
     }
 }
+
 @media (max-width: 1400px) {
     .nav {
         gap: 0.5rem;
@@ -213,6 +217,7 @@
         font-size: 0.95rem;
     }
 }
+
 @media (max-width: 768px) {
     .header {
         padding: 0.75rem 0.5rem;
@@ -226,11 +231,30 @@
     .menuButton {
         display: flex;
     }
-
     .mobileNavLinks a {
         font-size: 2rem;
         padding: 1rem 0;
         width: 100vw;
         text-align: center;
     }
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin-left: 1.5rem;      /* Add spacing from nav links */
+  color: var(--color-heading);
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  padding: 0.2em 0.6em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.themeToggle:hover {
+  color: var(--color-accent);
+  background: rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }

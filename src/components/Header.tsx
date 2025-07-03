@@ -11,6 +11,7 @@ const HEADER_HEIGHT = 96; // Update this value to match your header's true heigh
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const[theme, setTheme] = useState<'light' | 'dark'>('light');
 
     // Helper function for smooth scrolling with header offset
     const handleScrollLink = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -44,10 +45,28 @@ const Header = () => {
             document.body.style.overflow = 'auto';
         }
     }, [menuOpen]);
+      // On mount, check for saved theme or system preference
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved === "dark" || (saved === null && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      setTheme("dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else {
+      setTheme("light");
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  }, []);
 
     const headerClasses = `${styles.header} ${scrolled ? styles.scrolled : ''}`;
     const menuButtonClasses = `${styles.menuButton} ${menuOpen ? styles.open : ''}`;
     const mobileNavClasses = `${styles.mobileNavOverlay} ${menuOpen ? styles.open : ''}`;
+    const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
 
     return (
         <>
@@ -60,6 +79,13 @@ const Header = () => {
                     <a href="#about" onClick={(e) => handleScrollLink(e, 'about')}>About</a>
                     <a href="#contact" onClick={(e) => handleScrollLink(e, 'contact')}>Contact</a>
                 </nav>
+                <button
+                     className={styles.themeToggle}
+                     onClick={toggleTheme}
+                     aria-label="Toggle dark mode"
+                >
+                     {theme === "light" ? "🌙" : "☀️"}
+             </button>
                 <button className={menuButtonClasses} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
                     <div className={styles.hamburgerLine}></div>
                     <div className={styles.hamburgerLine}></div>

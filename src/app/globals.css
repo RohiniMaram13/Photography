@@ -11,6 +11,14 @@
   --font-rozha: "Rozha One", serif;
   --font-poppins: "Poppins", sans-serif;
 }
+/* Dark mode variables */
+[data-theme="dark"] {
+  --color-bg: #181818;
+  --color-text: #e0e0e0;
+  --color-heading: #fff;
+  --color-accent: #E58B6F;
+  --color-accent-dark: #B5654C;
+}
 
 /* A subtle geometric pattern for backgrounds */
 .pattern-bg {
