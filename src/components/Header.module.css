@@ -5,9 +5,9 @@
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center; 
-    padding: 1rem 1rem;
+    padding: 0.75rem 1rem;
     box-sizing: border-box;
     z-index: 1000;
     transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, padding 0.4s ease;
@@ -32,8 +32,10 @@
 }
 
 .logo {
-    flex: 0 0 auto; /* Prevent logo from shrinking */
+    flex: 1 1 auto; /* Prevent logo from shrinking */
     min-width: 0;
+    display: flex;
+    align-items: center;
 }
 
 .logo a {
@@ -63,6 +65,7 @@
     margin-left: auto; /* Push nav to the right */
     transition: gap 0.4s ease;
     overflow-x: auto;
+    align-items: center;
 }
 
 .nav a {
@@ -111,6 +114,7 @@
     cursor: pointer;
     padding: 0;
     z-index: 2100;
+    margin-left: 0.5rem;
 }
 
 .hamburgerLine {
@@ -201,6 +205,12 @@
 
 /* For phones and smaller tablets */
 @media (max-width: 768px) {
+    .header {
+        padding: 0.5rem 0.5rem;
+    }
+    .logo {
+        flex: 1 1 auto;
+    }
     .nav {
         display: none;
     }
@@ -244,7 +254,7 @@
   border: none;
   font-size: 1.7rem;
   cursor: pointer;
-  margin-left: 1.5rem;      /* Add spacing from nav links */
+  margin-left: 0.5rem;      /* Add spacing from nav links */
   color: var(--color-heading);
   transition: color 0.2s, background 0.2s, box-shadow 0.2s;
   padding: 0.2em 0.6em;

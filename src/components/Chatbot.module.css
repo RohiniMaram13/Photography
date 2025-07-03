@@ -1,8 +1,8 @@
 /* src/components/Chatbot.module.css */
 .chatToggleButton {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
     width: 60px;
     height: 60px;
     background-color: var(--color-accent);
@@ -13,14 +13,14 @@
     align-items: center;
     cursor: pointer;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    z-index: 1001;
+    z-index: 2000;
     transition: transform 0.3s ease;
 }
 
 .chatToggleButton:hover {
     transform: scale(1.1);
 }
-/* ...existing code... */
+
 
 .chatWindow {
     position: fixed;
