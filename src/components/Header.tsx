@@ -70,28 +70,34 @@ const Header = () => {
 
     return (
         <>
-            <header className={headerClasses}>
-                <div className={styles.logo}>
-                    <a href="#">Deep Depicts</a>
-                </div>
-                <nav className={styles.nav}>
-                    <a href="#work" onClick={(e) => handleScrollLink(e, 'work')}>Work</a>
-                    <a href="#about" onClick={(e) => handleScrollLink(e, 'about')}>About</a>
-                    <a href="#contact" onClick={(e) => handleScrollLink(e, 'contact')}>Contact</a>
-                </nav>
-                <button
-                     className={styles.themeToggle}
-                     onClick={toggleTheme}
-                     aria-label="Toggle dark mode"
-                >
-                     {theme === "light" ? "🌙" : "☀️"}
-             </button>
-                <button className={menuButtonClasses} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
-                    <div className={styles.hamburgerLine}></div>
-                    <div className={styles.hamburgerLine}></div>
-                    <div className={styles.hamburgerLine}></div>
-                </button>
-            </header>
+          
+<header className={headerClasses}>
+    <div className={styles.logo}>
+        <a href="#">Deep Depicts</a>
+    </div>
+    <nav className={styles.nav}>
+        <a href="#work" onClick={(e) => handleScrollLink(e, 'work')}>Work</a>
+        <a href="#about" onClick={(e) => handleScrollLink(e, 'about')}>About</a>
+        <a href="#contact" onClick={(e) => handleScrollLink(e, 'contact')}>Contact</a>
+    </nav>
+    <div className={styles.headerRight}>
+        <button
+            className={styles.themeToggle}
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+        >
+            {theme === "light" ? "🌙" : "☀️"}
+        </button>
+        <button className={menuButtonClasses} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+            <div className={styles.hamburgerLine}></div>
+            <div className={styles.hamburgerLine}></div>
+            <div className={styles.hamburgerLine}></div>
+        </button>
+    </div>
+</header>
+
+            {/* Mobile Navigation Overlay */}
+
             
             <div className={mobileNavClasses}>
                 <nav className={styles.mobileNavLinks}>

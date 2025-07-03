@@ -268,3 +268,30 @@
   background: rgba(0,0,0,0.04);
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
+.headerRight {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.5rem;
+}
+
+/* Mobile: keep logo left, icons right */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .logo {
+    flex: 0 0 auto;
+  }
+  .headerRight {
+    margin-left: auto;
+    gap: 0.5rem;
+  }
+  .themeToggle,
+  .menuButton {
+    margin-left: 0;
+  }
+}
